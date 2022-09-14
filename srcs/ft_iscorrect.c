@@ -17,8 +17,6 @@
  * que no hayan duplicados
  * */
 
-/*HAY PROBLEMAS CON EL NUMERO 0*/
-
 static int  check_repeat(int len, char **argv) //argc y argv
 {
     int y;

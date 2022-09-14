@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-	/*funcion TEMPORALI para ver los stacks antes y despues*/
+	/*funcion TEMPORAL para ver los stacks antes y despues*/
 void	mostrar_stacks(t_stack *stack_a, t_stack *stack_b, int mode)
 {
 	if (mode == 0)
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	confirm = move_to_complete(&stack_a, &stack_b, argc); //inicializa stacks
 	if (confirm == 0)
 	{
-		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack
+		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack_a
 		ft_putstr("los parametros pasan los checkers\n");
 		/*para ir probando con stack_b*/
 		stack_b.array[0] = 12;
@@ -60,6 +60,9 @@ int	main(int argc, char **argv)
 		}
 		else
 			ft_putstr("Stack desordenado. Comienza el algoritmo:\n");	
+
+		/*aqui es donde empiezan los algoritmos*/
+
 		mostrar_stacks(&stack_a, &stack_b, 1);	//show stacks despues
 		memory_free(&stack_a, &stack_b);
 	}
