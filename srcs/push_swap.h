@@ -51,6 +51,8 @@ void	ft_yes_isdigit(char *str);
 void	ft_is_int(char *str);
 void	ft_rellena_stack_a(int argc, char **matriz, t_stack *stack_a);
 
+void	aux_algoritmo(t_stack *stack_a, t_stack *stack_b);
+
  /* Funciones de movimiento */
 void	sa(t_stack *stack_a);	//swap a
 void	sb(t_stack *stack_b);	//swap b

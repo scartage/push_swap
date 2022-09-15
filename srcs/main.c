@@ -42,16 +42,14 @@ int	main(int argc, char **argv)
 	confirm = move_to_complete(&stack_a, &stack_b, argc); //inicializa stacks
 	if (confirm == 0)
 	{
-		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack_a
+		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack
 		ft_putstr("los parametros pasan los checkers\n");
 		/*para ir probando con stack_b*/
 		stack_b.array[0] = 12;
 		stack_b.array[1] = 13;
 		stack_b.array[2] = 14;
 
-		mostrar_stacks(&stack_a, &stack_b, 0);	//show stacks antes
-			
-		ft_putstr("-- Comienzan los movimietos entre stacks: \n");
+		mostrar_stacks(&stack_a, &stack_b, 0);	//show stacks antes			
 		confirm = is_sorted(&stack_a); //para revisar si el stack esta ordenado
 		if (confirm == 0)
 		{
@@ -60,9 +58,11 @@ int	main(int argc, char **argv)
 		}
 		else
 			ft_putstr("Stack desordenado. Comienza el algoritmo:\n");	
+		ft_putstr("--- Comienzan los movimietos entre stacks ---\n" );
 
-		/*aqui es donde empiezan los algoritmos*/
+		aux_algoritmo(&stack_a, &stack_b);
 
+		ft_putstr("--- terminan los movimietos entre stacks ---\n");
 		mostrar_stacks(&stack_a, &stack_b, 1);	//show stacks despues
 		memory_free(&stack_a, &stack_b);
 	}

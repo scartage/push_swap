@@ -24,6 +24,7 @@ INCLUDES_H	= srcs/push_swap.h	\
 SRCS		= 	main.c ft_iscorrect.c ft_movements.c	\
 				ft_movements_2.c	inicializando_stacks.c	\
 			   	auxiliaresGenerales.c auxiliaresMovimientos.c \
+				aux_algoritmo.c
 
 INCLUDES 	= libft/libft.a \
 
