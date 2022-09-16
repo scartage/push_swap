@@ -6,7 +6,7 @@
 #    By: scartage <scartage@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:57:56 by scartage          #+#    #+#              #
-#    Updated: 2022/07/14 20:44:44 by scartage         ###   ########.fr        #
+#    Updated: 2022/09/16 17:40:58 by scartage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCLUDES_H	= srcs/push_swap.h	\
 SRCS		= 	main.c ft_iscorrect.c ft_movements.c	\
 				ft_movements_2.c	inicializando_stacks.c	\
 			   	auxiliaresGenerales.c auxiliaresMovimientos.c \
-				aux_algoritmo.c
+				algoritmo.c	aux_algoritmos.c
 
 INCLUDES 	= libft/libft.a \
 

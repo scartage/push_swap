@@ -44,11 +44,7 @@ int	main(int argc, char **argv)
 	{
 		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack
 		ft_putstr("los parametros pasan los checkers\n");
-		/*para ir probando con stack_b*/
-		stack_b.array[0] = 12;
-		stack_b.array[1] = 13;
-		stack_b.array[2] = 14;
-
+		
 		mostrar_stacks(&stack_a, &stack_b, 0);	//show stacks antes			
 		confirm = is_sorted(&stack_a); //para revisar si el stack esta ordenado
 		if (confirm == 0)
