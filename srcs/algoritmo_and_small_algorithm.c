@@ -6,11 +6,17 @@
 /*   By: scartage <scartage@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:41:25 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/16 17:44:16 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:26:40 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void sort_2(t_stack *stack_a)
+{
+	if (stack_a->array[0] > stack_a->array[1])
+		sa(stack_a);
+}
 
 void sort_3(t_stack *stack_a)
 {
@@ -99,14 +105,15 @@ void sort_5(t_stack *stack_a, t_stack *stack_b)
 void	algoritmo(t_stack *stack_a, t_stack *stack_b)
 {
 	(void)stack_b;
-	if (stack_a->len == 3)
+	
+	if (stack_a->len == 2)
+		sort_2(stack_a);
+	else if (stack_a->len == 3)
 		sort_3(stack_a);
 	else if (stack_a->len == 4)
 		sort_4(stack_a, stack_b);
 	else if (stack_a->len == 5)
 		sort_5(stack_a, stack_b);
-	else if (stack_a->len > 5 && stack_a->len <= 100)
+	else 
 		big_algorithm(stack_a, stack_b);
-	else
-		printf("solo ordeno hasta 5 xd \n");
 }

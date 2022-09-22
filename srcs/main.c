@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:17:14 by scartage          #+#    #+#             */
-/*   Updated: 2022/07/08 18:41:14 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:01:52 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,18 @@ int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
+	t_stack stack_d;
+
 	int confirm;
 
 	if (argc < 2)
 		exit(EXIT_FAILURE);
-	confirm = move_to_complete(&stack_a, &stack_b, argc); //inicializa stacks
+	confirm = move_to_complete(&stack_a, &stack_b, &stack_d,  argc); //inicializa stacks
 	if (confirm == 0)
 	{
 		ft_iscorrect(argc, argv, &stack_a); //revisamos y rellenamos stack
 		ft_putstr("los parametros pasan los checkers\n");
-		
-		mostrar_stacks(&stack_a, &stack_b, 0);	//show stacks antes			
+				
 		confirm = is_sorted(&stack_a); //para revisar si el stack esta ordenado
 		if (confirm == 0)
 		{
@@ -53,10 +54,13 @@ int	main(int argc, char **argv)
 			exit(EXIT_SUCCESS);
 		}
 		else
-			ft_putstr("Stack desordenado. Comienza el algoritmo:\n");	
+			ft_putstr("Stack desordenado\n");
+		hidden_sort(&stack_a, &stack_b, &stack_d);
+
+		mostrar_stacks(&stack_a, &stack_b, 0);	//show stacks antes			
 		ft_putstr("--- Comienzan los movimietos entre stacks ---\n" );
 
-		aux_algoritmo(&stack_a, &stack_b);
+		algoritmo(&stack_a, &stack_b);
 
 		ft_putstr("--- terminan los movimietos entre stacks ---\n");
 		mostrar_stacks(&stack_a, &stack_b, 1);	//show stacks despues

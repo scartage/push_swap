@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: scartage <scartage@student.42barcel>       +#+  +:+       +#+         #
+#    By: scartage <scartage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:57:56 by scartage          #+#    #+#              #
-#    Updated: 2022/09/16 17:40:58 by scartage         ###   ########.fr        #
+#    Updated: 2022/09/21 18:22:30 by scartage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -g -Wall -Wextra -Werror
 
 RM 			= rm -f
 RMDIR 		= rm -rf
@@ -24,7 +24,8 @@ INCLUDES_H	= srcs/push_swap.h	\
 SRCS		= 	main.c ft_iscorrect.c ft_movements.c	\
 				ft_movements_2.c	inicializando_stacks.c	\
 			   	auxiliaresGenerales.c auxiliaresMovimientos.c \
-				algoritmo.c	aux_algoritmos.c
+				algoritmo_and_small_algorithm.c	aux_algoritmos.c \
+				before_algorithm.c big_algorithm.c
 
 INCLUDES 	= libft/libft.a \
 
