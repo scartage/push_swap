@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   aux_algoritmos.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scartage <scartage@student.42barcel>       +#+  +:+       +#+        */
+/*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:39:56 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/22 18:23:52 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:53:15 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*Para saber cuantos numero no entran en los chunks*/
 int position_right_chunk(t_stack *stack, int chunk, int limit)
 {
 	int i = 0;

@@ -6,13 +6,13 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:09:01 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/21 19:04:08 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:33:34 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void clean_b(t_stack *stack_b)
+/*void clean_b(t_stack *stack_b)
 {
 	int i = 0;
 
@@ -21,7 +21,7 @@ void clean_b(t_stack *stack_b)
 		stack_b->array[i] = 0;
 		i++;
 	}
-}
+}*/
 
 void game_index(int *array, int len, t_stack *stack_a)
 {
@@ -56,11 +56,15 @@ void	equal_stacks(t_stack *stack_a, t_stack *stack_d)
 	}
 }
 
+/*solucionar el problema de tener en el stack_b 0 que se pasan
+ * al stack_a*/
 void	hidden_sort(t_stack *stack_a, t_stack *stack_b,  t_stack *stack_d)
 {
+	(void)stack_b;
+
 	equal_stacks(stack_a, stack_d); 
 	game_index(stack_d->array, stack_d->len,  stack_a);
-	clean_b(stack_b);
+	//clean_b(stack_b);
 	free(stack_d->array);
 }
 

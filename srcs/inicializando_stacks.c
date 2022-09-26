@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 19:45:38 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/19 18:51:51 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:40:49 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ int is_sorted(t_stack *stack_a)
 	return (0);
 }
 
-int  move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d, int argc)
+int  move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d, int len)
 {
 	/*STACK_A*/
-	stack_a->len = argc - 1;
-	stack_a->array = malloc(sizeof(int) * stack_a->len);
+	stack_a->len = len;
+	stack_a->array = malloc(sizeof(int) * len);
 	if (stack_a->array == NULL)
 		return (ft_perror("fallo reserva"));
 
 	/*STACK_B*/
-	stack_b->len = argc - 1;
-	stack_b->array = malloc(sizeof(int) * stack_b->len);
+	stack_b->len = 0;
+	stack_b->array = malloc(sizeof(int) * len);
 	if (stack_b->array == NULL)
 	{
 		free(stack_a->array);
@@ -45,8 +45,8 @@ int  move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d, int 
 	}
 
 	/*el stack_b comienza estando vacio*/
-	stack_d->len = argc - 1;
-	stack_d->array = malloc(sizeof(int) * stack_d->len);
+	stack_d->len = len;
+	stack_d->array = malloc(sizeof(int) * len);
 	if (stack_d->array == NULL)
 	{
 		free(stack_a->array);

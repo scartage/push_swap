@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algoritmo.c                                        :+:      :+:    :+:   */
+/*   algoritmo_and_small_algorithm.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scartage <scartage@student.42barcel>       +#+  +:+       +#+        */
+/*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:41:25 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/22 15:26:40 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:06:17 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void sort_4(t_stack *stack_a, t_stack *stack_b)
 
 void sort_5(t_stack *stack_a, t_stack *stack_b)
 {
-	int nb_min = 0;
+int nb_min = 0;
 
 	nb_min = search_min(stack_a);
 	if (nb_min == stack_a->array[0])
@@ -103,9 +103,7 @@ void sort_5(t_stack *stack_a, t_stack *stack_b)
 }
 
 void	algoritmo(t_stack *stack_a, t_stack *stack_b)
-{
-	(void)stack_b;
-	
+{	
 	if (stack_a->len == 2)
 		sort_2(stack_a);
 	else if (stack_a->len == 3)
@@ -114,6 +112,6 @@ void	algoritmo(t_stack *stack_a, t_stack *stack_b)
 		sort_4(stack_a, stack_b);
 	else if (stack_a->len == 5)
 		sort_5(stack_a, stack_b);
-	else 
+	else
 		big_algorithm(stack_a, stack_b);
 }
