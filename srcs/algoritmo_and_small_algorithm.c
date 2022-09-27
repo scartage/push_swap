@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:41:25 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/26 18:06:17 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:58:26 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void sort_3(t_stack *stack_a)
 
 void sort_4(t_stack *stack_a, t_stack *stack_b)
 {
-	int nb_min = 0;
+	int nb_min;
 
 	nb_min = search_min(stack_a);
 	if (nb_min == stack_a->array[0])
@@ -70,7 +70,7 @@ void sort_4(t_stack *stack_a, t_stack *stack_b)
 
 void sort_5(t_stack *stack_a, t_stack *stack_b)
 {
-int nb_min = 0;
+	int nb_min;
 
 	nb_min = search_min(stack_a);
 	if (nb_min == stack_a->array[0])

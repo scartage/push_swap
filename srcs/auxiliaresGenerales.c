@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 19:53:06 by scartage          #+#    #+#             */
-/*   Updated: 2022/07/06 15:10:53 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 19:27:14 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,6 @@ void	ft_putstr(char *str)
 	}
 }
 
-/*para mostrar en pantalla la informacion del los stacks*/
-void	recorrido_array(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->len)
-		printf("%d\n", stack->array[i++]);
-}
-
 /*liberar memoria*/
 void	memory_free(t_stack *stack_a, t_stack *stack_b)
 {
@@ -49,7 +39,7 @@ void	memory_free(t_stack *stack_a, t_stack *stack_b)
 
 /*gestion de errores*/
 int	ft_perror(char *str)
-{
-	perror(str);
-	exit(EXIT_FAILURE);
+{	
+	ft_putstr(str);
+	exit(-1);
 }

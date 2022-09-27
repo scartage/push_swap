@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:45:39 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/26 19:38:59 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:12:58 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ static void	get_chunks(t_stack *stack_a, t_stack *stack_b, int chunk, int limit)
 		{
 			pb (stack_a, stack_b);
 			if (get_chunk_number(stack_a, chunk, limit) % 2 == 0 && chunk > 0)
-				rb(stack_b);		//ponemos el ultimo valor en stack_b en primera posicion
-		}
+				rb(stack_b);		}
 		else if (stack_a->array[0] > stack_a->array[1] && stack_b->array[1] > stack_b->array[0])
-			ss(stack_a, stack_b);	//en caso que los dos primeros de los stacks esten invertidos
+			ss(stack_a, stack_b);
 		else if (position_right_chunk(stack_a, chunk, limit) > stack_a->len / 2)
 			rra(stack_a);
 		else
@@ -32,12 +31,11 @@ static void	get_chunks(t_stack *stack_a, t_stack *stack_b, int chunk, int limit)
 	}
 }
 
-/*probando solo para numeros menores a 100,
- * faltan numeros mayores*/
 static int how_many_chunks(int len)
 {
-	int q_chunks = 0;
+	int q_chunks;
 
+	q_chunks = 0;
 	if (len > 200)
 		q_chunks = 13;
 	else if (len > 10)
@@ -47,29 +45,27 @@ static int how_many_chunks(int len)
 	return (q_chunks);
 }
 
-/*prueba para empezar a ordenar por montones*/
 void big_algorithm(t_stack *stack_a, t_stack *stack_b)
 {
 	int chunk;
 	int hM_chunks;
 	int limit;
-	int find;
+	int max_num;
 
 	chunk = 0;
 	hM_chunks = how_many_chunks(stack_a->len);
 	limit = stack_a->len / hM_chunks;
 	while (chunk < limit)
 	{
-		get_chunks(stack_a, stack_b, chunk, limit);  //chunk (del 0 al 3), limit(25)
-		mostrar_stacks(stack_a, stack_b, 0);
+		get_chunks(stack_a, stack_b, chunk, limit);
 		chunk++;
 	}	
 	while (stack_b->len > 0)
 	{
-		find = search_max(stack_b);
-		while (stack_b->array[0] != find)
+		max_num = search_max(stack_b);
+		while (stack_b->array[0] != max_num)
 		{
-			if (position_right(stack_b, find) > stack_b->len / 2)
+			if (position_right(stack_b, max_num) > stack_b->len / 2)
 				rrb(stack_b);
 			else
 				rb(stack_b);

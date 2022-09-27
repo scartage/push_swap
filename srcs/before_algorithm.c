@@ -6,22 +6,17 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:09:01 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/26 17:33:34 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:54:17 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void clean_b(t_stack *stack_b)
-{
-	int i = 0;
-
-	while (i < stack_b->len)
-	{
-		stack_b->array[i] = 0;
-		i++;
-	}
-}*/
+/*Aqui, con la ayuda del stack_d, se vuelve a rellenar el stack_a, 
+ * esta vez no con numeros (en valores) sino en numeros (por posiciones)
+ *
+ * No se mira si: 5 3 2 1 4
+ * sino:		  4 2 1 0 3*/
 
 void game_index(int *array, int len, t_stack *stack_a)
 {
@@ -44,6 +39,7 @@ void game_index(int *array, int len, t_stack *stack_a)
 	}
 }
 
+/*Nos iguala el contenido de stack_a en el stack_d (auxiliar)*/
 
 void	equal_stacks(t_stack *stack_a, t_stack *stack_d)
 {
@@ -56,15 +52,13 @@ void	equal_stacks(t_stack *stack_a, t_stack *stack_d)
 	}
 }
 
-/*solucionar el problema de tener en el stack_b 0 que se pasan
- * al stack_a*/
+
 void	hidden_sort(t_stack *stack_a, t_stack *stack_b,  t_stack *stack_d)
 {
 	(void)stack_b;
 
 	equal_stacks(stack_a, stack_d); 
 	game_index(stack_d->array, stack_d->len,  stack_a);
-	//clean_b(stack_b);
 	free(stack_d->array);
 }
 

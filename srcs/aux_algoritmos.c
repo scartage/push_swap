@@ -6,16 +6,18 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:39:56 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/26 18:53:15 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:07:24 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*Para saber cuantos numero no entran en los chunks*/
+
+/*Para saber cuantos numeros no entran en el chunk "actual"*/
 int position_right_chunk(t_stack *stack, int chunk, int limit)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (i < stack->len && !(stack->array[i] >= (chunk * limit) &&
 				stack->array[i] < (chunk * limit) + limit))
 		i++;
@@ -25,19 +27,22 @@ int position_right_chunk(t_stack *stack, int chunk, int limit)
 /*va de 0 hasta el len en busca del numero (find) y te dice cuantos caracteres hay hasta este*/
 int position_right(t_stack *stack, int find)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (i < stack->len && stack->array[i] != find)
 		i++;
 	return (i);
 }
 
-/*para saber la cantidad de numeros que se obtiene de un monton*/
+/*para saber la cantidad de numeros que entran en un monton*/
 int get_chunk_number(t_stack *stack, int chunk, int limit)
 {
-	int i = 0;
-	int x = 0;
+	int i;
+	int x;
 
+	i = 0;
+	x = 0;
 	while (i < stack->len)
 	{
 		if (stack->array[i] >= (chunk * limit) && stack->array[i] < (chunk * limit) + limit)
@@ -47,11 +52,14 @@ int get_chunk_number(t_stack *stack, int chunk, int limit)
 	return (x);
 }
 
+/*Busca el numero maximo en el stack*/
 int search_max(t_stack *stack)
 {
-	int i = 0;
-	int max = stack->array[i];
+	int i;
+	int max;
 
+	i = 0;
+	max = stack->array[i];
 	while (i < stack->len)
 	{
 		if (stack->array[i] > max)
@@ -61,11 +69,14 @@ int search_max(t_stack *stack)
 	return (max);
 }
 
+/*Busca el numero minimo en el stack*/
 int search_min(t_stack *stack)
 {
-	int i = 0;
-	int min = stack->array[i];
+	int i;
+	int min;
 
+	i = 0;
+	min = stack->array[i];
 	while (i < stack->len)
 	{
 		if (stack->array[i] < min)
