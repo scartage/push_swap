@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:17:05 by scartage          #+#    #+#             */
-/*   Updated: 2022/05/12 20:48:19 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/27 20:06:33 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_check_atoi(char *str)
 		i++;
 	}
 	aux = aux * sig;
-	if (aux <= INT_MIN || aux > INT_MAX)
+	if (aux < INT_MIN || aux > INT_MAX)
 		return (1);
 	return (0);
 }

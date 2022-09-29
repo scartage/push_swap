@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:09:01 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/27 15:54:17 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:52:29 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
  * No se mira si: 5 3 2 1 4
  * sino:		  4 2 1 0 3*/
 
-void game_index(int *array, int len, t_stack *stack_a)
+void	game_index(int *array, int len, t_stack *stack_a)
 {
-	int counter_g = 0;
-	int counter_s;
-	int nbr = 0;
+	int	counter_g;
+	int	counter_s;
+	int	nbr;
 
+	counter_g = 0;
+	nbr = 0;
 	while (counter_g < len)
 	{
 		nbr = 0;
@@ -43,22 +45,18 @@ void game_index(int *array, int len, t_stack *stack_a)
 
 void	equal_stacks(t_stack *stack_a, t_stack *stack_d)
 {
-	int i = 0;
+	int	i;
 
-	while(i < stack_a->len)
+	i = 0;
+	while (i < stack_a->len)
 	{
 		stack_d->array[i] = stack_a->array[i];
 		i++;
 	}
 }
 
-
-void	hidden_sort(t_stack *stack_a, t_stack *stack_b,  t_stack *stack_d)
+void	hidden_sort(t_stack *stack_a, t_stack *stack_d)
 {
-	(void)stack_b;
-
-	equal_stacks(stack_a, stack_d); 
-	game_index(stack_d->array, stack_d->len,  stack_a);
-	free(stack_d->array);
+	equal_stacks(stack_a, stack_d);
+	game_index(stack_d->array, stack_d->len, stack_a);
 }
-

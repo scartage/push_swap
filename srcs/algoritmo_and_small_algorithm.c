@@ -6,44 +6,51 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:41:25 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/27 15:58:26 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:48:56 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_2(t_stack *stack_a)
+void	sort_2(t_stack *stack_a)
 {
 	if (stack_a->array[0] > stack_a->array[1])
 		sa(stack_a);
 }
 
-void sort_3(t_stack *stack_a)
+void	sort_3(t_stack *stack_a)
 {
-	if (stack_a->array[0] > stack_a->array[1] && stack_a->array[1] < stack_a->array[2] && stack_a->array[2] > stack_a->array[0])
+	if (stack_a->array[0] > stack_a->array[1]
+		&& stack_a->array[1] < stack_a->array[2]
+		&& stack_a->array[2] > stack_a->array[0])
 		sa(stack_a);
-	
-	else if (stack_a->array[0] > stack_a->array[1] && stack_a->array[1] > stack_a->array[2] && stack_a->array[2] < stack_a->array[0])
+	else if (stack_a->array[0] > stack_a->array[1]
+		&& stack_a->array[1] > stack_a->array[2]
+		&& stack_a->array[2] < stack_a->array[0])
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
-	else if (stack_a->array[0] > stack_a->array[1] && stack_a->array[1] < stack_a->array[2] && stack_a->array[2] < stack_a->array[0])
+	else if (stack_a->array[0] > stack_a->array[1]
+		&& stack_a->array[1] < stack_a->array[2]
+		&& stack_a->array[2] < stack_a->array[0])
 		ra(stack_a);
-
-	else if (stack_a->array[0] < stack_a->array[1] && stack_a->array[1] > stack_a->array[2] && stack_a->array[2] > stack_a->array[0])
+	else if (stack_a->array[0] < stack_a->array[1]
+		&& stack_a->array[1] > stack_a->array[2]
+		&& stack_a->array[2] > stack_a->array[0])
 	{
 		sa(stack_a);
 		ra(stack_a);
 	}
-
-	else if (stack_a->array[0] < stack_a->array[1] && stack_a->array[1] > stack_a->array[2] && stack_a->array[2] < stack_a->array[0])
+	else if (stack_a->array[0] < stack_a->array[1]
+		&& stack_a->array[1] > stack_a->array[2]
+		&& stack_a->array[2] < stack_a->array[0])
 		rra(stack_a);
 }
 
-void sort_4(t_stack *stack_a, t_stack *stack_b)
+void	sort_4(t_stack *stack_a, t_stack *stack_b)
 {
-	int nb_min;
+	int	nb_min;
 
 	nb_min = search_min(stack_a);
 	if (nb_min == stack_a->array[0])
@@ -70,7 +77,7 @@ void sort_4(t_stack *stack_a, t_stack *stack_b)
 
 void sort_5(t_stack *stack_a, t_stack *stack_b)
 {
-	int nb_min;
+	int	nb_min;
 
 	nb_min = search_min(stack_a);
 	if (nb_min == stack_a->array[0])

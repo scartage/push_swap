@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:45:39 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/27 16:12:58 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:21:51 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ static void	get_chunks(t_stack *stack_a, t_stack *stack_b, int chunk, int limit)
 {
 	while (get_chunk_number(stack_a, chunk, limit) > 0)
 	{
-		if (stack_a->array[0] >= (chunk * limit) && stack_a->array[0] < (chunk * limit) + limit)
+		if (stack_a->array[0] >= (chunk * limit)
+			&& stack_a->array[0] < (chunk * limit) + limit)
 		{
 			pb (stack_a, stack_b);
 			if (get_chunk_number(stack_a, chunk, limit) % 2 == 0 && chunk > 0)
-				rb(stack_b);		}
-		else if (stack_a->array[0] > stack_a->array[1] && stack_b->array[1] > stack_b->array[0])
+				rb(stack_b);
+		}
+		else if (stack_a->array[0] > stack_a->array[1]
+			&& stack_b->array[1] > stack_b->array[0])
 			ss(stack_a, stack_b);
 		else if (position_right_chunk(stack_a, chunk, limit) > stack_a->len / 2)
 			rra(stack_a);
@@ -31,30 +34,30 @@ static void	get_chunks(t_stack *stack_a, t_stack *stack_b, int chunk, int limit)
 	}
 }
 
-static int how_many_chunks(int len)
+static int	how_many_chunks(int len)
 {
-	int q_chunks;
+	int	q_chunks;
 
 	q_chunks = 0;
 	if (len > 200)
 		q_chunks = 13;
 	else if (len > 10)
-		q_chunks = 4;
+		q_chunks = 7;
 	else
 		q_chunks = 2;
 	return (q_chunks);
 }
 
-void big_algorithm(t_stack *stack_a, t_stack *stack_b)
+void	big_algorithm(t_stack *stack_a, t_stack *stack_b)
 {
-	int chunk;
-	int hM_chunks;
-	int limit;
-	int max_num;
+	int	chunk;
+	int	hm_chunks;
+	int	limit;
+	int	max_num;
 
 	chunk = 0;
-	hM_chunks = how_many_chunks(stack_a->len);
-	limit = stack_a->len / hM_chunks;
+	hm_chunks = how_many_chunks(stack_a->len);
+	limit = stack_a->len / hm_chunks;
 	while (chunk < limit)
 	{
 		get_chunks(stack_a, stack_b, chunk, limit);

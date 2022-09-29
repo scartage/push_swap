@@ -6,18 +6,17 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 20:11:22 by scartage          #+#    #+#             */
-/*   Updated: 2022/06/27 20:30:48 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:40:06 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 	/*AUXILIARES DE MOVIMIENTOS*/
-
 void	reverse(t_stack *stack)
 {
-	int aux;
-	int len_aux;
+	int	aux;
+	int	len_aux;
 
 	len_aux = stack->len;
 	aux = stack->array[len_aux - 1];
@@ -27,8 +26,8 @@ void	reverse(t_stack *stack)
 
 void	rotate(t_stack	*stack)
 {
-	int aux;
-	int len_aux;
+	int	aux;
+	int	len_aux;
 
 	aux = stack->array[0];
 	len_aux = stack->len;
@@ -36,10 +35,10 @@ void	rotate(t_stack	*stack)
 	stack->array[len_aux - 1] = aux;
 }
 
- /*Aux de pa, pb*/
+/*Aux de pa, pb*/
 void	elementosStack_arriba(t_stack *stack, int mode)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stack->len - 1)
@@ -53,7 +52,7 @@ void	elementosStack_arriba(t_stack *stack, int mode)
 
 void	elementosStack_abajo(t_stack *stack, int mode)
 {
-	int len_aux;
+	int	len_aux;
 
 	len_aux = stack->len;
 	while (len_aux)
@@ -65,11 +64,10 @@ void	elementosStack_abajo(t_stack *stack, int mode)
 		stack->len++;
 }
 
-
- /*Aux sa, sb y ss*/
+/*Aux sa, sb y ss*/
 void	ft_aux_swap(t_stack *stack)
 {
-	int aux;
+	int	aux;
 
 	aux = stack->array[0];
 	stack->array[0] = stack->array[1];
