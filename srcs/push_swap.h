@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:20:34 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 20:17:18 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:11:20 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,15 @@ typedef struct s_stack
 
 /*Funcioones utiles*/
 int		ft_perror(char	*str);
-void	move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d, int len);
+void	move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d);
 int		is_sorted(t_stack *stack_a);
 void	memory_free(t_stack	*stack_a, t_stack *stack_b, t_stack *stack_d);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
 
-/* ft_iscorrect: filtro que nos lleva
- *  a comprobar los parametros
- *		ft_yes_isdigit: los numeros pasados como parametro son digitos
- *		ft_no_duplicate: revisa que no hayan numeros duplicados
- *		ft_is_int:	revisa que los parametros estan entre los valores INT_MIN y INT_MAX
- */
+/*		ft_iscorrect: filtro que nos lleva a comprobar los parametros*/
+/*		ft_yes_isdigit: los numeros pasados como parametro son digitos*/
+/*		ft_no_duplicate: revisa que no hayan numeros duplicados*/
+/*		ft_is_int:	revisa que los parametros
+		estan entre los valores INT_MIN y INT_MAX*/
 void	ft_iscorrect(int argc, char **argv, t_stack *stack_a);
 void	ft_yes_isdigit(char *str);
 void	ft_is_int(char *str);
@@ -58,15 +55,17 @@ int		position_right_chunk(t_stack *stack, int chunk, int limit);
 void	algoritmo(t_stack *stack_a, t_stack *stack_b);
 void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
+void	move_sort_3(t_stack *stack_a);
 void	sort_4(t_stack *stack_a, t_stack *stack_b);
 void	sort_5(t_stack *stack_a, t_stack *stack_b);
+void	move_sort_5(int nb_min, t_stack *stack_a, t_stack *stack_b);
 void	big_algorithm(t_stack *stack_a, t_stack *stack_b);
 int		get_chunk_number(t_stack *stack, int chunk, int limit);
 
 /* Funciones de movimiento */
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
-void 	ss(t_stack	*stack_a, t_stack *stack_b);
+void	ss(t_stack	*stack_a, t_stack *stack_b);
 void	pb(t_stack	*stack_a, t_stack *stack_b);
 void	pa(t_stack	*stack_b, t_stack *stack_a);
 void	ra(t_stack	*stack_a);
@@ -83,8 +82,8 @@ void	ft_aux_swap(t_stack *stack);
  * se les agrego la opcion de restar/sumar
  * un elemento, dependiendo si el paramentreo (mood)
  * es (1) o (0), con el objetivo de usar las funciones en mas casos*/
-void  elementosStack_arriba(t_stack *stack, int mode);
-void	elementosStack_abajo(t_stack	*stack, int mode);
+void	elementos_stack_arriba(t_stack *stack, int mode);
+void	elementos_stack_abajo(t_stack	*stack, int mode);
 void	rotate(t_stack	*stack);
 void	reverse(t_stack *stack);
 

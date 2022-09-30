@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:09:01 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:29 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:12:46 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
  *
  * No se mira si: 5 3 2 1 4
  * sino:		  4 2 1 0 3*/
-
 void	game_index(int *array, int len, t_stack *stack_a)
 {
 	int	counter_g;
@@ -42,7 +41,6 @@ void	game_index(int *array, int len, t_stack *stack_a)
 }
 
 /*Nos iguala el contenido de stack_a en el stack_d (auxiliar)*/
-
 void	equal_stacks(t_stack *stack_a, t_stack *stack_d)
 {
 	int	i;

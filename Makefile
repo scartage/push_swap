@@ -6,21 +6,16 @@
 #    By: scartage <scartage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:57:56 by scartage          #+#    #+#              #
-#    Updated: 2022/09/29 20:15:38 by scartage         ###   ########.fr        #
+#    Updated: 2022/09/30 14:20:46 by scartage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 CC			= gcc
-CFLAGS		=  -g -Wall -Wextra -Werror   
-# -fsanitize=address
-
-
+CFLAGS		=  -g -Wall -Wextra -Werror  
 RM 			= rm -f
 RMDIR 		= rm -rf
 
-
-#tengo problemas al hacer libft.h, ya que me vuelve a compilar los punto c del push_swap
 INCLUDES_H	= srcs/push_swap.h	\
 
 SRCS		= 	main.c ft_iscorrect.c ft_movements.c	\
@@ -63,7 +58,7 @@ fclean: clean
 		$(RMDIR) $(OBJ_DIR)
 		
 test: make_libs	${NAME}
-	./${NAME} 10 9 8 7 6 5 4 3 2 1
+	./${NAME} `ruby -e "puts (-59...20).to_a.shuffle.join(' ')"`
 
 leaks: $(NAME)
 		leaks -atExit -- ./$(NAME) 10 9 8 7 6 5 4 3 2 1

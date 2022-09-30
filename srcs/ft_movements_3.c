@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scartage <scartage@student.42barcel>       +#+  +:+       +#+        */
+/*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:12:06 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 20:17:45 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:11:57 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_putstr("rrr\n");
+	write(1, "rrr\n", 4);
 	reverse(stack_a);
 	reverse(stack_b);
 }

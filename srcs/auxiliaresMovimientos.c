@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 20:11:22 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 19:40:06 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:12:49 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse(t_stack *stack)
 
 	len_aux = stack->len;
 	aux = stack->array[len_aux - 1];
-	elementosStack_abajo(stack, 1);
+	elementos_stack_abajo(stack, 1);
 	stack->array[0] = aux;
 }
 
@@ -31,12 +31,12 @@ void	rotate(t_stack	*stack)
 
 	aux = stack->array[0];
 	len_aux = stack->len;
-	elementosStack_arriba(stack, 1);
+	elementos_stack_arriba(stack, 1);
 	stack->array[len_aux - 1] = aux;
 }
 
 /*Aux de pa, pb*/
-void	elementosStack_arriba(t_stack *stack, int mode)
+void	elementos_stack_arriba(t_stack *stack, int mode)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ void	elementosStack_arriba(t_stack *stack, int mode)
 		stack->len--;
 }
 
-void	elementosStack_abajo(t_stack *stack, int mode)
+void	elementos_stack_abajo(t_stack *stack, int mode)
 {
 	int	len_aux;
 

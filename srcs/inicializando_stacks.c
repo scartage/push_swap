@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 19:45:38 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 20:00:23 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 13:44:31 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ int	is_sorted(t_stack *stack_a)
  * 
  * Tenemos 3 stacks, dos obligatorios y uno auxiliar
  * que se le da uso mas adelante*/
-void	move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d, int len)
+void	move_to_complete(t_stack *stack_a, t_stack *stack_b, t_stack *stack_d)
 {
-	stack_a->len = len;
+	int	len;
+
+	len = stack_a->len;
 	stack_a->array = malloc(sizeof(int) * len);
 	if (stack_a->array == NULL)
 		return (exit(EXIT_FAILURE));

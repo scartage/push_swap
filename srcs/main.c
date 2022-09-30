@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:17:14 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 20:02:02 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:01:30 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		exit(EXIT_FAILURE);
-	move_to_complete(&stack_a, &stack_b, &stack_d, argc - 1);
+	stack_a.len = argc - 1;
+	move_to_complete(&stack_a, &stack_b, &stack_d);
 	ft_iscorrect(argc, argv, &stack_a);
 	confirm = is_sorted(&stack_a);
 	if (confirm == 0)

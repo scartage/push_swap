@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:55:47 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/29 20:14:58 by scartage         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:12:32 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_rellena_stack_a(int argc, char **matriz, t_stack *stack_a)
 	while (i < argc)
 	{	
 		aux_number = ft_atoi(matriz[i]);
-		stack_a->array[i - 1]  = aux_number;
+		stack_a->array[i - 1] = aux_number;
 		i++;
 	}
 }
