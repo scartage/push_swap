@@ -6,7 +6,7 @@
 #    By: scartage <scartage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:57:56 by scartage          #+#    #+#              #
-#    Updated: 2022/09/30 14:20:46 by scartage         ###   ########.fr        #
+#    Updated: 2022/09/30 17:08:16 by scartage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ fclean: clean
 		$(RMDIR) $(OBJ_DIR)
 		
 test: make_libs	${NAME}
-	./${NAME} `ruby -e "puts (-59...20).to_a.shuffle.join(' ')"`
+	./${NAME} `ruby -e "puts (20...30).to_a.shuffle.join(' ')"`
 
 leaks: $(NAME)
 		leaks -atExit -- ./$(NAME) 10 9 8 7 6 5 4 3 2 1

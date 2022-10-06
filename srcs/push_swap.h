@@ -6,7 +6,7 @@
 /*   By: scartage <scartage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:20:34 by scartage          #+#    #+#             */
-/*   Updated: 2022/09/30 14:11:20 by scartage         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:21:55 by scartage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include <stdio.h>			/*para usar perror*/
 # include <limits.h>		/*INT_MIN y INT_MAX*/
 # include <stdlib.h>		/*para usar perror y exit*/
+
+
+/* python3 pyviz.py `ruby -e "puts (-50..49).to_a.shuffle.join(' ')"
+ * Para ver como ordena los numeros.
+ *
+ * https://github.com/laisarena/push_swap_tester
+ * Tester*/
 
 typedef struct s_stack
 {
